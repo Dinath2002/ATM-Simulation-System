@@ -25,17 +25,17 @@ public class BankAccount {
     }
 
 // Deposit Logic (simplified error handling)
-    public void deposit(double amount) throws IllegalArgumentException {
+    public double deposit(double amount) throws IllegalArgumentException {
         if (amount <= 0) {
 // Using println for error message as requested
             throw new IllegalArgumentException("❌ Deposit amount must be positive.");
         }
         balance += amount;
-        System.out.println("✅ Deposit successful! Amount: " + amount);
+        return balance;
     }
 
 // Withdraw Logic (simplified error handling)
-    public void withdraw(double amount) throws IllegalArgumentException, InsufficientFundsException {
+    public double withdraw(double amount) throws IllegalArgumentException, InsufficientFundsException {
         if (amount <= 0) {
 // Using println for error message as requested
             throw new IllegalArgumentException("❌ Withdrawal amount must be positive.");
@@ -46,7 +46,7 @@ public class BankAccount {
         }
 
         balance -= amount;
-        System.out.println("✅ Withdrawal successful! Amount: " + amount);
+        return balance;
     }
 
 // Getter for Account Number
